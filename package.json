@@ -1,0 +1,8 @@
+{
+  "name": "clean-node-api-study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dyhalmeida/clean-node-api-study.git",
+  "author": "Diego Almeida <diego.almeida@memed.com.br>",
+  "license": "MIT"
+}
