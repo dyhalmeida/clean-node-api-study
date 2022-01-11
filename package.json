@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:dyhalmeida/clean-node-api-study.git",
   "author": "Diego Almeida <diego.almeida@memed.com.br>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^16.0.4"
+  }
 }
