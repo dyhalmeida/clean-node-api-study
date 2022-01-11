@@ -6,6 +6,7 @@
   "author": "Diego Almeida <diego.almeida@memed.com.br>",
   "license": "MIT",
   "devDependencies": {
+    "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "standard": "^16.0.4"
   }
