@@ -5,8 +5,12 @@
   "repository": "git@github.com:dyhalmeida/clean-node-api-study.git",
   "author": "Diego Almeida <diego.almeida@memed.com.br>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "husky": "^7.0.4",
+    "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "standard": "^16.0.4"
   }
