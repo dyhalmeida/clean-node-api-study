@@ -21,4 +21,11 @@ module.exports = class HttpResponse {
       body: new UnauthorizedError()
     }
   }
+
+  static created (data) {
+    return {
+      statusCode: 201,
+      body: data
+    }
+  }
 }

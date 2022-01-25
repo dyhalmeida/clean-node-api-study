@@ -4,9 +4,14 @@ const UnauthorizedError = require('../helpers/unauthorized-error')
 
 const makeSut = () => {
   class AuthUseCaseSpy {
+    constructor () {
+      this.accessToken = 'any_token'
+    }
+
     auth ({ email, password }) {
       this.email = email
       this.password = password
+      return this.accessToken
     }
   }
   const authUseCaseSpy = new AuthUseCaseSpy()
@@ -67,7 +72,8 @@ describe('Login Router', () => {
   })
 
   test('Should return 401 when invalid params are provided', () => {
-    const { sut } = makeSut()
+    const { sut, authUseCaseSpy } = makeSut()
+    authUseCaseSpy.accessToken = null
     const httpRequest = {
       body: {
         email: 'invalid_email',
@@ -77,6 +83,19 @@ describe('Login Router', () => {
     const httpResponse = sut.route(httpRequest)
     expect(httpResponse.statusCode).toBe(401)
     expect(httpResponse.body).toEqual(new UnauthorizedError())
+  })
+
+  test('Should return 201 when valid params are provided', () => {
+    const { sut, authUseCaseSpy } = makeSut()
+    const httpRequest = {
+      body: {
+        email: 'invalid_email',
+        password: 'invalid_password'
+      }
+    }
+    const httpResponse = sut.route(httpRequest)
+    expect(httpResponse.statusCode).toBe(201)
+    expect(httpResponse.body.accessToken).toBe(authUseCaseSpy.accessToken)
   })
 
   test('Should return 500 if not AuthUseCase is provided', () => {
