@@ -6,7 +6,7 @@
   "author": "Diego Almeida <diego.almeida@memed.com.br>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test:staged": "jest"
   },
   "standard": {
     "env": ["jest"]
