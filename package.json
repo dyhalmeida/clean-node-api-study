@@ -13,12 +13,17 @@
     "test:ci": "yarn test -- --coverage"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "devDependencies": {
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "standard": "^16.0.4"
+  },
+  "dependencies": {
+    "validator": "^13.7.0"
   }
 }
